@@ -1,0 +1,53 @@
+import tkinter
+
+class Application():
+    def _init_(self,master,args,*kwargs):
+        self.master=master
+
+        self.left=Frame(master,width=750,height=768,bg='SkyBlue')
+        self.left.pack(side=LEFT)
+
+        self.right = Frame(master, width=500, height=500, bg='white')
+        self.right.pack(side=RIGHT)
+
+
+        #components
+        self.heading=Label(self.left,text="MARVELS STORE",font=('ALGERIAN 40 bold'),fg='Black')
+        self.heading.place(x=100,y=10)
+
+        self.date_l=Label(self.right,text="Date: "+str(date),font=('Calibri 18 bold'),fg='black')
+        self.date_l.place(x=140,y=0)
+
+        #table invoice=======================================================
+        self.tproduct=Label(self.right,text="Products",font=('Calibri 20 bold'),fg='Black')
+        self.tproduct.place(x=0,y=60)
+
+        self.tquantity = Label(self.right, text="Quantity", font=('Calibri 20 bold'),fg='Black')
+        self.tquantity.place(x=150, y=60)
+
+        self.tamount = Label(self.right, text="Price", font=('Calibri 20 bold'), fg='Black')
+        self.tamount.place(x=300, y=60)
+
+        #enter stuff
+        self.enterid=Label(self.left,text="ID Number",font=('calibri 20 bold'),fg='black')
+        self.enterid.place(x=50,y=80)
+
+
+        self.enteride=Entry(self.left,width=25,font=('Calibri 18 bold'),bg='lightblue')
+        self.enteride.place(x=220,y=80)
+        self.enteride.focus()
+
+        #button
+        self.search_btn=Button(self.left,text="Find",width=18,height=2,bg='green',command=self.ajax)
+        self.search_btn.place(x=580,y=70)
+        #fill it later by the fuction ajax
+
+        self.productname=Label(self.left,text="",font=('Calibri 27 bold'),bg='white',fg='steelblue')
+        self.productname.place(x=0,y=200)
+
+        self.pprice = Label(self.left, text="", font=('Calibri 27 bold'), bg='white', fg='steelblue')
+        self.pprice.place(x=0, y=250)
+
+        #total label
+        self.total_l=Label(self.right,text="",font=('arial 40 bold'),bg='lightblue',fg='white')
+        self.total_l.place(x=0,y=400)
